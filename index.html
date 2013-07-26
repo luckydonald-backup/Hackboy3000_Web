@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Current IP Check</title>
+        <title>Hackboy 3000 Online</title>
         <link rel='icon' href='favicon.ico' type='image/x-icon' />
         <link type='text/css' rel='stylesheet' href='css/style.css' />
-        <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body ng-app="app">
+        <nav active="1" split="3" ng-init="links=[{name:'CodingAllNight', url:'//codingallnight.com'},
+                                                    {name:'Fallout', url:'//fallout.codingallnight.com'},
+                                                    {name:'Sudoku', url:'//codingallnight.com'},
+                                                    {name:'Contact', url:'//www.codingallnight.com'}]"></nav>
+        <div id='content'>
+            <div id='pipboy'>
+                <div id='preScreen'>
+                    <input id='preHiddenConsole' type='text' autofocus='autofocus' />
+                    <div id='preConsole'>
+                        <div id='directions' class='word'>
+                            <span>Loading terminal hacking protocols....</span><br>
+                            <span>Ready....</span><br><br>
+                            <span>Enter the potential passwords with a space separating each one</span><br>
+                        </div>
+                        <span id='preInputLine'>
+                            <span class='word'>[></span><span id='preConsoleInput' class='word'></span><span id='preCursor' class='word blink'>&#9608;</span>
+                        </span>
+                    </div>
+                </div>
+                <div id='mainScreen' class='hidden'>
+                    <div id='words'>
+                    </div>
+                    <input id='hiddenConsole' type='text' maxlength='23' />
+                    <div id='bestGuess' class='word'>The best guess would be<br><span id='bestGuessWord'>chris</span></div>
+                    <div id='console'>
+                        <div id='outputBox'>
+                            <div id='output'></div>
+                        </div>
+                        <br>
+                        <span id='inputLine'>
+                            <span class='word'>[></span><span id='consoleInput' class='word'></span><span id='cursor' class='word blink'>&#9608;</span>
+                        </span>
+                    </div>
+                    <div id='audio'>
+                        <audio id='mouse_over' src='audio/scroll_step.mp3' preload='auto'></audio>
+                        <audio id='return' src='audio/enter_key.mp3' preload='auto'></audio>
+                        <audio class='keys' preload='auto' src='audio/key1.mp3'></audio>
+                        <audio class='keys' preload='auto' src='audio/key2.mp3'></audio>
+                        <audio class='keys' preload='auto' src='audio/key3.mp3'></audio>
+                        <audio class='keys' preload='auto' src='audio/key4.mp3'></audio>
+                        <audio class='keys' preload='auto' src='audio/key5.mp3'></audio>
+                    </div>
+                </div>
+                <div id='afterScreen' class='hidden'></div>
+            </div>
+        </div>
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
         <script type='text/javascript' src='js/script.js'></script>
         <script type='text/javascript' src='js/hacking.js'></script>
-    </head>
-    <body>
-        <div id='pipboy'>
-            <div id='preScreen'>
-                <input id='preHiddenConsole' type='text' autofocus='autofocus' />
-                <div id='preConsole'>
-                    <div id='directions' class='word'>
-                        <span>Loading terminal hacking protocols....</span><br>
-                        <span>Ready....</span><br><br>
-                        <span>Enter the potential passwords with a space separating each one</span><br>
-                    </div>
-                    <span id='preInputLine'>
-                        <span class='word'>[></span><span id='preConsoleInput' class='word'></span><span id='preCursor' class='word blink'>&#9608;</span>
-                    </span>
-                </div>
-            </div>
-            <div id='mainScreen' class='hidden'>
-                <div id='words'>
-                </div>
-                <input id='hiddenConsole' type='text' maxlength='23' />
-                <div id='bestGuess' class='word'>The best guess would be<br><span id='bestGuessWord'>chris</span></div>
-                <div id='console'>
-                    <div id='outputBox'>
-                        <div id='output'></div>
-                    </div>
-                    <br>
-                    <span id='inputLine'>
-                        <span class='word'>[></span><span id='consoleInput' class='word'></span><span id='cursor' class='word blink'>&#9608;</span>
-                    </span>
-                </div>
-                <div id='audio'>
-                    <audio id='mouse_over' src='audio/scroll_step.mp3' preload='auto'></audio>
-                    <audio id='return' src='audio/enter_key.mp3' preload='auto'></audio>
-                    <audio class='keys' preload='auto' src='audio/key1.mp3'></audio>
-                    <audio class='keys' preload='auto' src='audio/key2.mp3'></audio>
-                    <audio class='keys' preload='auto' src='audio/key3.mp3'></audio>
-                    <audio class='keys' preload='auto' src='audio/key4.mp3'></audio>
-                    <audio class='keys' preload='auto' src='audio/key5.mp3'></audio>
-                </div>
-            </div>
-            <div id='afterScreen' class='hidden'></div>
-        </div>
+        <script type='text/javascript' src='js/ang.js'></script>
     </body>
 </html>

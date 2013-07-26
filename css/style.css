@@ -1,13 +1,38 @@
 body {
-    background-color : gray;
+    background-color : #1F1F1F;
 }
 
 #pipboy {
-    margin-right : auto;
-    margin-left : auto;
-    background-image : url('../graphics/pipboy_2500.png');
+    /*margin-right : auto;*/
+    /*margin-left : auto;*/
+    /*margin-top : 50px;*/
+    position: relative;
+    top: 50px;
+    background-image : url('../graphics/pipboy_2500.jpg');
     width : 1024px;
-    height : 576px;
+    height : 587px;
+}
+
+#content {
+    width: 1024px;
+    height: 637px;
+}
+
+@media only screen and (min-height: 626px) {
+    #content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-height: 625px) {
+    #content {
+        margin: 0 auto;
+    }
 }
 
 #mainScreen, #preScreen {
@@ -134,8 +159,49 @@ body {
 }
 
 #hiddenConsole, #preHiddenConsole {
-    left : -1000px;
-    position : absolute;
+    /*left : -1000px;*/
+    top: -30px;
+    position : relative;
+    /*display: none;*/
+}
+
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #CE6105;  /* This color @ 80% opacity is as close to BNG_Orange @ 100% as I can get. */
+    /*opacity: 0.8;*/
+    /*filter:alpha(opacity=80);*/   /* For IE8 and earlier */
+    z-index: 10;
+}
+
+.navButton {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+    border: 0px solid;
+    border-radius: 5px;
+    z-index: 11;
+    text-align: center;
+    font-family: Menlo, Monaco, "Lucida Console", monospace;
+    padding: 0px 15px;
+    background-color: #1F1F1F;
+    color: #33DD88;
+}
+
+.navButton_right {
+    float: right;
+    margin-right: 5px;
+}
+
+.activeNav {
+    font-weight: bold;
+    color: #1F1F1F;
+    background-color: inherit;
 }
 
 /* Blink */
