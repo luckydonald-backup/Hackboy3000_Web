@@ -219,3 +219,6 @@ pip-log.txt
 #################
 
 *.iml
+*.ipr
+*.iws
+.idea/
