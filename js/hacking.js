@@ -57,7 +57,7 @@ function initialize(array) {
 
         $(selector).mouseenter(function() {
             if (!$(this).hasClass('disabled')) {
-                $(this).toggleClass('hovered');
+                $(this).toggleClass('hovered');     // Doing this instead of :hover so I can only hover enabled words
                 $("#mouse_over_"+index)[0].play();
             }
         });
@@ -104,6 +104,7 @@ function flagDuds(index, correlation) {
             flags[i] = false;
             wordsLeft--;
             $(selector).addClass('disabled');
+//            $(selector).prop('disabled');     //TODO: Use the 'disabled' attribute with the ':disabled' selector instead of the 'disabled' class
         }
     }
 
