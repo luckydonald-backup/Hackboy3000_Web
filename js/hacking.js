@@ -11,9 +11,9 @@ $(document).ready(function() {
         "RECUPERATING", "BROADCASTING", "CONSTRUCTION", "PASSWORD #14", "PASSWORD #15",
         "PASSWORD #16", "PASSWORD #17", "PASSWORD #18", "PASSWORD #1923", "PASSWORD #201"];
 
-    initialize(test);
-    analyze();
-    promptWord();
+    //initialize(test);
+    //analyze();
+    //promptWord();
 });
 var passwords;
 var flags;
@@ -23,6 +23,12 @@ var wordsLeft;
 var bestGuess = '#bestGuessWord';
 var input = '#consoleInput';
 var currentWord = null;
+
+function run(list) {
+    initialize(list);
+    analyze();
+    promptWord();
+}
 
 function promptWord() {
     $(bestGuess).html(passwords[findBestOption()]);

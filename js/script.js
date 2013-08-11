@@ -27,6 +27,11 @@ $(document).ready(function() {
             //TODO: Check list for errors (spelling, word length)
 
             //TODO: If the list checks out, proceed to main screen; Else prompt the user to fix the list.
+            var list = $('#preHiddenConsole').val().split(' ');
+            $('#preScreen').addClass('hidden');
+            $('#mainScreen').removeClass('hidden');
+            $('#hiddenConsole').focus();
+            run(list);
         }
     });
 
